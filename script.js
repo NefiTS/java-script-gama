@@ -21,11 +21,21 @@ function validaCPF(cpf) { // encapsulando e esperando um texto digitado
       }
 
       console.log(soma);
-      
 
-      
-      
+      var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11); // % mod e a sobra da divisão
+                       //executando operação, caso positivo executar logo apos o sinal de interregação ate os dois pontos
+                       // se resultar em  zero vai por dentro da var resultado
+                       // se for 3 ou 4 vai ultilizar o que vem depois dos dois pontos  
+                       // Operador ternário, unico que possui 3 operandos
 
+      //validação do primeiro digito                 
+      if (resultado != digitos.charAt(0)) {
+
+        return false;
+      }
+
+        //console.log(digitos.toString().charAt(0) + " e a primeira posição da var soma"); // toString faz a conveção para string
+      
       return true;
     }
 
